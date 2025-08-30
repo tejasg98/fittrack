@@ -32,9 +32,7 @@ A **Spring Boot-based fitness tracking application** that allows users to manage
 ✅ Test Coverage: Above 80% across modules.
 ✅ Unit & Integration Tests: All test cases pass successfully (mvn test).
 ----
-## API Documentatio
-✅ SonarQube report is clean (no major issues).
-✅ Test coverage is above 80%.
+## API Documentation
 ✅ Swagger documentation is available at:
 http://localhost:8080/swagger-ui/index.html
 http://localhost:8080/v3/api-docs
