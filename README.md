@@ -38,11 +38,31 @@ A **Spring Boot-based fitness tracking application** that allows users to manage
 - ✅ Unit & Integration Tests: All test cases pass (`mvn test`).
 
 ## 📖 API Documentation
-
 - ✅ Swagger docs: [UI](http://localhost:8080/swagger-ui/index.html) | [API](http://localhost:8080/v3/api-docs)
-- ✅ User details API: Fetch complete user profile, activities, and workout plans. 🔒 Admin-only access.
   
 ----
 
 ✅ User details API is available, which can fetch complete user profile along with activities and workout plans.
 🔒 Access to all user details and activities is restricted to Admin only.
+
+----
+
+## Prerequisites
+- Java 24
+- Maven 3.6+
+
+## Installation & Setup
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/your-username/fittrack-app.git
+   cd fittrack
+2.**Configure database:**
+    For development (H2): No setup needed
+    For production: Update application.properties with your DB credentials.
+3.**Build the application:**
+    mvn clean install
+4.**Run the application:**
+    mvn spring-boot:run
+5.**Access the application:**
+  Main application: http://localhost:8080
+  H2 Console (dev): http://localhost:8080/h2-console
