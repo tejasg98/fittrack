@@ -29,9 +29,6 @@ public class DataLoader implements CommandLineRunner {
     @Value("${app.user.jane.email}") private String janeEmail;
     @Value("${app.user.jane.password}") private String janePassword;
 
-    @Value("${app.user.trainer.email}") private String trainerEmail;
-    @Value("${app.user.trainer.password}") private String trainerPassword;
-
     @Value("${app.user.guest.email}") private String guestEmail;
     @Value("${app.user.guest.password}") private String guestPassword;
 
@@ -75,15 +72,6 @@ public class DataLoader implements CommandLineRunner {
                     .roles(Set.of(ROLE_USER))
                     .build();
 
-            User trainer = User.builder()
-                    .fullName("Vikram Singh")
-                    .email(trainerEmail)
-                    .password(passwordEncoder.encode(trainerPassword))
-                    .dateOfBirth(LocalDate.of(1985, 12, 5))
-                    .weight(82.0)
-                    .height(180.0)
-                    .roles(Set.of("ROLE_TRAINER"))
-                    .build();
 
             User guest = User.builder()
                     .fullName("Priya Desai")
@@ -119,10 +107,10 @@ public class DataLoader implements CommandLineRunner {
             userRepository.save(admin);
             userRepository.save(john);
             userRepository.save(jane);
-            userRepository.save(trainer);
             userRepository.save(guest);
             userRepository.save(extra1);
             userRepository.save(extra2);
         }
     }
 }
+
