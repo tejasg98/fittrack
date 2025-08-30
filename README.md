@@ -10,12 +10,15 @@ A **Spring Boot-based fitness tracking application** that allows users to manage
 - ✅ **Password Encryption** with `BCryptPasswordEncoder`
 - ✅ **JWT stored in HttpOnly cookies** (secure, not accessible via JS)
 - ✅ **Role-based access control** (USER, ADMIN)
-- ✅ **Workout Plans Management** (CRUD)
+- ✅ **Users Authentication and Authorization**
+- ✅ **Users Management**(CRUD with pagination)
+- ✅ **Workout Plans Management** (CRUD with pagination)
 - ✅ **Activity Logs Management** (CRUD with pagination)
 - ✅ **Validation** using Jakarta annotations
 - ✅ **Swagger/OpenAPI documentation**
 - ✅ **Unit & Integration Tests** using JUnit + Mockito + MockMvc
 - ✅ **Exception Handling** with global `@ControllerAdvice`
+- ✅ **Storing Data In H2-Databse** (In Memory)
 
 ---
 
