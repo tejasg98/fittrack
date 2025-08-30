@@ -54,6 +54,7 @@ A **Spring Boot-based fitness tracking application** that allows users to manage
 ## Installation & Setup
 Clone the repository:
 git clone https://github.com/tejasg98/fittrack.git
+
 cd fittrack
 
 Configure database:
