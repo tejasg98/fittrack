@@ -19,6 +19,7 @@ A **Spring Boot-based fitness tracking application** that allows users to manage
 - ✅ **Unit & Integration Tests** using JUnit + Mockito + MockMvc
 - ✅ **Exception Handling** with global `@ControllerAdvice`
 - ✅ **Storing Data In H2-Databse** (In Memory)
+- ✅ **Using Logger For Tracing**
 
 ---
 
