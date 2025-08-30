@@ -26,7 +26,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.
 
 @SpringBootTest
 @AutoConfigureMockMvc(addFilters = false)  // 🚀 disables Spring Security filters
-class WorkoutPlanControllerIntegrationTest {
+class WorkoutPlanControllerTest {
 
 	@Autowired
 	private MockMvc mockMvc;

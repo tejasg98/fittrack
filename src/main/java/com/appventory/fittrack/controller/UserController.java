@@ -35,12 +35,6 @@ public class UserController {
 	private final UserService userService;
 	private final ReportService repoortService;
 
-	@Operation(summary = "Create a new user", description = "Registers a new user in the system.")
-	@PostMapping
-	public ResponseEntity<UserResponse> createUser(@Valid @RequestBody UserRequest request) {
-		return ResponseEntity.status(HttpStatus.CREATED).body(userService.createUser(request));
-	}
-
 	@Operation(summary = "Get all users", description = "Fetch paginated list of all users. Requires ADMIN role.")
 	@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping

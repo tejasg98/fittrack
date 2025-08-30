@@ -4,7 +4,6 @@ import static org.mockito.ArgumentMatchers.any;
 import static org.mockito.Mockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.delete;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
@@ -62,15 +61,6 @@ class UserControllerTest {
 		userReportResponse = UserReportResponse.builder().userId(1L).fullName("testuser").build();
 	}
 
-	@Test
-	@WithMockUser(roles = "USER")
-	void createUser_ReturnsCreated() throws Exception {
-		when(userService.createUser(any(UserRequest.class))).thenReturn(userResponse);
-
-		mockMvc.perform(post("/v1/api/users").contentType(MediaType.APPLICATION_JSON)
-				.content(objectMapper.writeValueAsString(validUserRequest))).andExpect(status().isCreated())
-				.andExpect(jsonPath("$.id").value(1L)).andExpect(jsonPath("$.fullName").value("testuser"));
-	}
 
 	@Test
 	void getAllUsers_Unauthenticated_ReturnsUnauthorized() throws Exception {
