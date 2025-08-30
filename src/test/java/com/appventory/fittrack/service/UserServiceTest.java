@@ -53,16 +53,16 @@ class UserServiceTest {
 
 	@Test
 	void testCreateUser() {
-		// 🔹 Mock password encoder
+		//  Mock password encoder
 		when(passwordEncoder.encode("password123")).thenReturn("encodedPassword");
 
-		// 🔹 Mock repository save
+		// Mock repository save
 		when(userRepository.save(any(User.class))).thenReturn(user);
 
-		// 🔹 Call service
+		// Call service
 		UserResponse response = userService.createUser(request);
 
-		// 🔹 Assertions
+		// Assertions
 		assertThat(response.getId()).isEqualTo(1L);
 		assertThat(response.getEmail()).isEqualTo("john@example.com");
 
@@ -92,7 +92,7 @@ class UserServiceTest {
 
 	@Test
 	void testUpdateUser() {
-		// 🔹 Mock Authentication
+		//  Mock Authentication
 		Authentication authentication = mock(Authentication.class);
 		when(authentication.getName()).thenReturn("john@example.com");
 
@@ -101,17 +101,17 @@ class UserServiceTest {
 
 		SecurityContextHolder.setContext(securityContext);
 
-		// 🔹 Mock repo
+		// Mock repo
 		when(userRepository.findById(1L)).thenReturn(Optional.of(user));
 		when(userRepository.save(any(User.class))).thenReturn(user);
 
-		// 🔹 Call service
+		// Call service
 		UserResponse updated = userService.updateUser(1L, request);
 
 		assertThat(updated.getFullName()).isEqualTo("John Doe");
 		verify(userRepository, times(1)).save(any(User.class));
 
-		// 🔹 Cleanup (important for isolation across tests!)
+		// Cleanup (important for isolation across tests!)
 		SecurityContextHolder.clearContext();
 	}
 
@@ -126,3 +126,4 @@ class UserServiceTest {
 		verify(userRepository, times(1)).deleteById(1L);
 	}
 }
+
