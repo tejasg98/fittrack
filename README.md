@@ -52,17 +52,24 @@ A **Spring Boot-based fitness tracking application** that allows users to manage
 - Maven 3.6+
 
 ## Installation & Setup
-1. **Clone the repository:**
-   ```bash
-   git clone https://github.com/your-username/fittrack-app.git
-   cd fittrack
-2.**Configure database:**
-    For development (H2): No setup needed
-    For production: Update application.properties with your DB credentials.
-3.**Build the application:**
-    mvn clean install
-4.**Run the application:**
-    mvn spring-boot:run
-5.**Access the application:**
-  Main application: http://localhost:8080
-  H2 Console (dev): http://localhost:8080/h2-console
+Clone the repository:
+git clone https://github.com/tejasg98/fittrack.git
+cd fittrack
+
+Configure database:
+For development (H2): No setup needed
+For production: Update application.properties with your database credentials
+
+Build the application:
+mvn clean install
+
+Run the application:
+mvn spring-boot:run
+
+Access the application:
+Main application: http://localhost:8080
+H2 Console (dev): http://localhost:8080/h2-console
+
+JDBC URL: jdbc:h2:mem:fittrack
+Username: sa
+Password: (leave empty) 
